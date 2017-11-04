@@ -67,8 +67,6 @@ void Snake::setLength( int length)
 	int size = coords.count();
 	if( length <  size)
 	{
-		QPoint *p = coords.at( length);
-	
                 for(int i=length; i < size; i++)
                     coords.removeAt(i);
 	}
@@ -140,7 +138,7 @@ void Snake::escape()
 	stop();
 	state = Escaped;
 }
-void Snake::timerEvent(QTimerEvent *tEvt)
+void Snake::timerEvent(QTimerEvent * /*unused*/)
 {
 	move();
 }

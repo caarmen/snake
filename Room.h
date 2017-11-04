@@ -20,9 +20,9 @@ public:
 	Room();
 	Room(RoomGrid grid);
 	~Room();
-	void paintEvent( QPaintEvent *pEvt);
+	void paintEvent( QPaintEvent * /*unused*/);
 	void keyPressEvent( QKeyEvent *kEvt);
-	void timerEvent( QTimerEvent *tEvt);
+	void timerEvent( QTimerEvent * /*unused*/);
 	void receiveEvent( SnakeEvent *sEvt);
 	int getWidth();
 	int getHeight();

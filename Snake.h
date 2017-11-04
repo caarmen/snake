@@ -28,7 +28,7 @@ public:
 	void stop();
 	void die();
 	void escape();
-	void timerEvent(QTimerEvent *tEvt);
+	void timerEvent(QTimerEvent * /*unused*/);
         QList<QPoint*> *getPoints();
 	SnakeState getState();
 private:

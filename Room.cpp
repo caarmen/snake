@@ -41,7 +41,7 @@ Room::~Room()
 {
 }
 
-void Room::Room::paintEvent( QPaintEvent *pEvt)
+void Room::Room::paintEvent( QPaintEvent * /* unused */)
 {
 	drawRoom();
 	drawSnakes();
@@ -90,7 +90,7 @@ void Room::keyPressEvent( QKeyEvent *kEvt)
 	}
 }
 
-void Room::timerEvent( QTimerEvent *tEvt)
+void Room::timerEvent( QTimerEvent * /*unused*/)
 {
 }
 
@@ -129,9 +129,10 @@ void Room::receiveEvent( SnakeEvent *sEvt)
 			break;
 		case Exit:
 			snake->escape();
-			QString s;
-			s = s.sprintf("You ate all the red apples in %d seconds.  Congrats!", timeElapsed.elapsed() / 1000);
-			QMessageBox::information(this,"You won!", s);
+			QMessageBox::information(this,"You won!", QString::asprintf("You ate all the red apples in %d seconds.  Congrats!", timeElapsed.elapsed() / 1000));
+			break;
+		case Floor:
+			break;
 	}
 }
 
@@ -207,7 +208,8 @@ void Room::drawRoom()
 				if(redAppleCount > 0)
 					paint.drawPixmap(i*pw, j*ph, wallPix);
 				break;
-
+			default:
+				break;
 			}
 
 		}
@@ -248,6 +250,8 @@ void Room::drawSnakes()
 			break;
 		case NorthWest:
 			m.rotate(315);
+			break;
+		default:
 			break;
 		}
 
