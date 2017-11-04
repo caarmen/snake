@@ -6,13 +6,14 @@ out of curiosity to learn QT.
 
 REQUIREMENTS
 This game was initially written for Qt on Linux in 2001.  In June 2011, I
-updated it to compile on the latest version of Qt (4.7) on Mac OS X.
+updated it to compile on the latest version of Qt (4.7) on Mac OS X. I updated
+it again in November 2017 to compile with Qt 5.9.2 on Mac OS X.
 
 BUILDING
-1) Edit the Makefile and set the value of the QTDIR directory to point to
-the location of QT on your PC. Depending on which version of QT you
-have, you may have to modify the QTDIR_DESKTOP variable as well.
-2) Run make. This creates a "snake" executable in the bin/ directory.
+These steps have only been tested on Mac OS X:
+* qmake -project
+* qmake QT+=widgets
+* make
 
 RUNNING 
 Run the snake executable.

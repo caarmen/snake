@@ -1,0 +1,6 @@
+.DS_Store
+.qmake.stash
+*.o
+snake.pro
+snake.app/
+Makefile
