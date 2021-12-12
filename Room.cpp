@@ -1,6 +1,7 @@
 #include "Room.h"
 #include "Constants.h"
-#include <qmatrix.h>
+#include <qtransform.h>
+#include <qelapsedtimer.h>
 #include <qpixmap.h>
 #include <qpalette.h>
 #include <qpainter.h>
@@ -31,7 +32,7 @@ Room::Room( RoomGrid grid) : QWidget(), redAppleCount(0)
 	QPixmap p("images/wall.xpm");
 	setFixedSize(grid.width*p.width(), grid.height*p.height());
         QPalette palette(this->palette());
-        palette.setColor(QPalette::Background, QColor(0,0,0));
+        palette.setColor(QPalette::Window, QColor(0,0,0));
         this->setPalette(palette);
 	populateRedApples(grid.width * grid.height / 200);
 	populateGreenApples(5);
@@ -105,7 +106,7 @@ void Room::receiveEvent( SnakeEvent *sEvt)
 	switch(item)
 	{
 		case Entrance:
-			timeElapsed = QTime(0,0,0);
+			timeElapsed = QElapsedTimer();
 			timeElapsed.start();
 			grid.data[x][y] = Wall;
 			break;
@@ -129,7 +130,7 @@ void Room::receiveEvent( SnakeEvent *sEvt)
 			break;
 		case Exit:
 			snake->escape();
-			QMessageBox::information(this,"You won!", QString::asprintf("You ate all the red apples in %d seconds.  Congrats!", timeElapsed.elapsed() / 1000));
+			QMessageBox::information(this,"You won!", QString::asprintf("You ate all the red apples in %lli seconds.  Congrats!", timeElapsed.elapsed() / 1000));
 			break;
 		case Floor:
 			break;
@@ -227,7 +228,7 @@ void Room::drawSnakes()
 	{
                 Snake *snake = snakes.at( i);
                 Direction dir = snake->getDirection();
-                QMatrix m;
+                QTransform m;
 		switch(dir)
 		{
 		case NorthEast:

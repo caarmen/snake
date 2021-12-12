@@ -33,7 +33,7 @@ Snake::Snake( Room *r, int length, int speed)
 		coords.append( new QPoint( xEntrance, height + 1));
 		direction = North;
 	}
-	setLength( length - 2);
+	setLength(length - 2);
 	state = NotStarted;
 	setSpeed( speed);
 	r->addSnake(this);
@@ -68,7 +68,7 @@ void Snake::setLength( int length)
 	if( length <  size)
 	{
                 for(int i=length; i < size; i++)
-                    coords.removeAt(i);
+                    coords.removeLast();
 	}
 	else
 	{

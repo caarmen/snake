@@ -2,6 +2,7 @@
 #define ROOM_H
 
 #include <qdatetime.h>
+#include <qelapsedtimer.h>
 #include <qmainwindow.h>
 #include <qwidget.h>
 #include <qlist.h>
@@ -44,6 +45,6 @@ private:
 	QPoint exit;
         QList<Snake * > snakes;
 	int redAppleCount;
-	QTime timeElapsed;
+	QElapsedTimer timeElapsed;
 };
 #endif
