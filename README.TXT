@@ -5,9 +5,10 @@ This is a game I wrote in April 2001, in part to pass the time away, in part
 out of curiosity to learn QT. 
 
 REQUIREMENTS
-This game was initially written for Qt on Linux in 2001.  In June 2011, I
-updated it to compile on the latest version of Qt (4.7) on Mac OS X. I updated
-it again in November 2017 to compile with Qt 5.9.2 on Mac OS X.
+This game was initially written for Qt on Linux in 2001. It has had a couple of updates:
+* June 2011: update to compile with Qt 4.7 on Mac OS X.
+* November 2017: update to compile with Qt 5.9.2 on Mac OS X.
+* December 2021: update to compile with Qt 6.2.2 on Mac OS X.
 
 BUILDING
 These steps have only been tested on Mac OS X:
@@ -15,9 +16,12 @@ These steps have only been tested on Mac OS X:
 * qmake QT+=widgets
 * make
 
+To make an app that can be distributed:
+* macdeployqt snake.app -dmg
+
 RUNNING 
 Run the snake executable.
-Optional argument: --file <filename> where <filename> is a snake level
+Optional argument: --file </path/to/filename> where </path/to/filename> is a snake level
 file.  
 
 PLAYING THE GAME

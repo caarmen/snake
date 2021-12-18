@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>level1.snl</file>
+        <file>level2.snl</file>
+    </qresource>
+</RCC>
