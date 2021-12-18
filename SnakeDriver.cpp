@@ -7,7 +7,7 @@
 
 int main(int argc, char **argv)
 {
-	const char *filename = "level1.snl";
+	const char *filename = ":/level1.snl";
 	srandom(time(NULL));
 	for(int i=0; i<argc; i++)
 	{

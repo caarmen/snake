@@ -29,7 +29,7 @@ Room::Room( RoomGrid grid) : QWidget(), redAppleCount(0)
 				exit.setY(j);
 			}
 		}
-	QPixmap p("images/wall.xpm");
+	QPixmap p(":/images/wall.xpm");
 	setFixedSize(grid.width*p.width(), grid.height*p.height());
         QPalette palette(this->palette());
         palette.setColor(QPalette::Window, QColor(0,0,0));
@@ -184,9 +184,9 @@ void Room::drawRoom()
 {
 
 	QPainter paint(this);
-	QPixmap wallPix("images/wall.xpm");
-	QPixmap greenApplePix("images/greenApple.xpm");
-	QPixmap redApplePix("images/redApple.xpm");
+	QPixmap wallPix(":/images/wall.xpm");
+	QPixmap greenApplePix(":/images/greenApple.xpm");
+	QPixmap redApplePix(":/images/redApple.xpm");
 	int pw = wallPix.width();
 	int ph = wallPix.height();
 	for(int i = 0; i < grid.width; i++)
@@ -220,8 +220,8 @@ void Room::drawRoom()
 void Room::drawSnakes()
 {
 	QPainter paint(this);
-	QPixmap snakePix("images/snake.xpm");
-	QPixmap snakeHead("images/head.xpm");
+	QPixmap snakePix(":/images/snake.xpm");
+	QPixmap snakeHead(":/images/head.xpm");
 	int pw = snakePix.width();
 	int ph = snakePix.height();
 	for( int i = 0; i < snakes.count(); i++)

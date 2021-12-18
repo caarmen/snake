@@ -4,3 +4,4 @@
 snake.pro
 snake.app/
 Makefile
+qrc_resources.cpp
